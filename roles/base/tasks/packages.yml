@@ -1,0 +1,74 @@
+---
+- name: Install Base packages
+  pacman:
+      name: "{{ packages.base_packages }}"
+      state: present
+  tags:
+    - packages
+
+- name: Install Packaging && File Utilities
+  pacman:
+    name: "{{ packages.packaging_tools }}"
+    state: present
+  tags:
+    - packages
+
+- name: Install Python Libraries
+  pacman:
+    name: "{{ packages.python_libraries }}"
+    state: present
+  tags:
+    - packages
+
+- name: Install System Monitoring Tools
+  pacman:
+    name: "{{ packages.system_monitoring }}"
+    state: present
+  tags:
+    - packages
+
+- name: Install Manjaro ISO Tools
+  pacman:
+    name: "{{ packages.manjaro_packages }}"
+    state: present
+  tags:
+    - packages
+
+- name: Create pacman hook directory
+  file: path=/etc/pacman.d/hooks
+        state=directory
+  tags:
+    - packages
+
+- name: Use all cores when compressing packages
+  lineinfile:
+    dest: /etc/makepkg.conf
+    regexp: "^COMPRESSXZ"
+    line: "COMPRESSXZ=(xz -c -z - --threads=0)"
+
+- name: Push pacman cache cleanup service
+  copy: src=paccache.service dest=/etc/systemd/system/paccache.service
+  notify:
+    - reload systemd config
+  tags:
+    - packages
+
+- name: Push pacman cache cleanup timer
+  copy: src=paccache.timer dest=/etc/systemd/system/paccache.timer
+  notify:
+    - reload systemd config
+    - restart paccache
+  tags:
+    - packages
+
+- name: Enable and start pacman cache cleanup timer
+  service: name=paccache.timer enabled=yes state=started
+  tags:
+    - packages
+
+- name: Install Octopi
+  command: /usr/bin/yay -S --needed --noconfirm octopi
+  become: yes
+  become_user: "{{ user.name }}"
+  tags:
+    - packages

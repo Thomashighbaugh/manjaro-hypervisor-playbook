@@ -1,0 +1,2 @@
+- name: Install gedit Latex plugin
+  command: /usr/bin/aura -Ax --noconfirm --needed gedit-latex

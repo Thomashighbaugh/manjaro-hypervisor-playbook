@@ -1,0 +1,21 @@
+---
+- name: Install Vice
+  git:
+    repo: 'https://github.com/Thomashighbaugh/Vice-Theme'
+    dest: /opt/Vice-Theme
+
+- name: Copy Vice to System Themes
+  copy:
+    src: /opt/Vice-Theme/Theme
+    dest: /usr/share/themes/Vice-Theme
+    owner: "{{user.name}}"
+    group: "{{user.group}}"
+    mode: '777'
+
+- name: Copy Vice to System Themes
+  copy:
+    src: /opt/Vice-Theme/Icons
+    dest: /usr/share/icons/Vice-Icons
+    owner: "{{user.name}}"
+    group: "{{user.group}}"
+    mode: '777'

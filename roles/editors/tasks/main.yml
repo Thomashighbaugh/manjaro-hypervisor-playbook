@@ -1,0 +1,16 @@
+---
+- name: Install editors
+  pacman:
+    name: "{{ editors }}"
+    state: present
+
+- include: jetbrains.yml
+- include: gisto.yml
+- include: zed.yml
+- include: lighttable.yml
+- include: wikidpad.yml
+- include: cudatext.yml
+- include: zettlr.yml
+- include: texworks.yml
+- include: gedit-latex.yml
+- include: texworks.yml

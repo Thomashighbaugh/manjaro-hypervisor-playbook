@@ -1,0 +1,31 @@
+---
+- name: Install filesystem packages
+  pacman:
+    name: "{{ packages.filesystem_packages }}"
+    state: present
+
+- name: Install File Managers
+  pacman:
+    name:
+      - doublecmd-qt5
+      - ranger
+    state: present
+
+- name: Install Sunflower FM
+  command: sudo aura -Ax --needed --noconfirm sunflower
+
+- name: Install Disk Utilities
+  pacman:
+    name:
+      - smartmontools
+      - gsmartcontrol
+      - gnome-disk-utility
+      - gparted
+      - rsync
+      - rclone
+      - mediainfo
+      - pngcrush
+      - mutagen
+
+
+

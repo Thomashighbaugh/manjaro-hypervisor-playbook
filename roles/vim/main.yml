@@ -1,0 +1,19 @@
+---
+
+- name: Clone ultimate vimrc repo for {{ user }}
+  become: yes
+  become_user: "{{ user.name }}"
+  git:
+    repo: https://github.com/amix/vimrc.git
+    dest: ~{{ user }}/.vim_runtime
+  tags:
+    - vim
+
+- name: Install Awesome version of ultimate vimrc for {{ user }}
+  shell: sh ~{{ user }}/.vim_runtime/install_awesome_vimrc.sh
+  become: yes
+  become_user: "{{ user.name }}"
+  tags:
+    - vim
+
+

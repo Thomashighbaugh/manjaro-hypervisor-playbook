@@ -1,0 +1,18 @@
+---
+- name: Install dotbro
+  command: /usr/bin/aura -Ax --needed --noconfirm dotbro
+  when: dotfiles is defined
+  tags:
+    - aura
+    - packages
+
+- name: Clone user dotfiles
+  git: repo={{ dotfiles.url }} dest=/home/{{ user.name }}/dotfiles
+  when: dotfiles is defined
+  become: yes
+  become_user: "{{ user.name }}"
+
+- name: Install user dotfiles
+  command: dotbro -c /home/{{ user.name }}/dotfiles/config.toml
+  become: yes
+  become_user: "{{ user.name }}"

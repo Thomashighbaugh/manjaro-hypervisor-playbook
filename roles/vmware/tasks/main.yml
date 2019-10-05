@@ -1,0 +1,14 @@
+---
+- name: Install VMware Workstation
+  command: /usr/bin/aura --noconfirm --needed vmware-workstation
+  tags:
+    - vmware
+    - vm
+
+- name: Install Open VMware Tools
+  pacman:
+    name: open-vm-tools
+    state: present
+    tags:
+      - vmware
+      - vm

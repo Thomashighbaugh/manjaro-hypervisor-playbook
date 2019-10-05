@@ -1,0 +1,6 @@
+---
+- name: Install Lemonbar
+  command: /usr/bin/aura -Ax --noconfirm --needed lemonbar-git
+  tags:
+    - menus
+    - aura

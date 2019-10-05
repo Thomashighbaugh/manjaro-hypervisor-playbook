@@ -1,0 +1,20 @@
+---
+- name: Install Bash
+  pacman:
+    name:
+      - bash
+      - bash-completion
+    state: present
+  tags:
+    - shell
+
+- name: Install ZSH
+  pacman:
+    name:
+      - zsh
+      - zsh-completions
+      - manjaro-zsh-config
+      - powerline
+    state: present
+  tags:
+    - shell

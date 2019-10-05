@@ -1,0 +1,11 @@
+---
+- name: Install hostsctl
+  command: /usr/bin/aura -Ax --noconfirm --needed hostsctl
+  tags:
+    - aur
+
+- name: Push hostsctl config
+  template: src=hostsctl.conf.j2 dest=/etc/hostsctl.conf
+
+- name: Update hostsctl
+  command: hostsctl update

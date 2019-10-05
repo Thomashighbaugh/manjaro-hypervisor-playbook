@@ -1,0 +1,63 @@
+---
+- name: Install w3m
+  pacman:
+    name: w3m
+    state: present
+
+- name: Install Firefox
+  pacman:
+    name: firefox
+    state: present
+  tags:
+    - firefox
+
+- name: Install Chromium
+  pacman:
+    name: chromium
+    state: present
+  tags:
+    - chromium
+
+- name: Install Pepper Flash
+  pacman:
+    name: pepper-flash
+    state: present
+  tags:
+    - chromium
+
+- name: Install firefox-developer-edition
+  pacman:
+    name: firefox-developer-edition
+    state: present
+  tags:
+    - firefox-developer-edition
+
+- name: Install Basilisk
+  command: /usr/bin/aura -Ax --noconfirm --needed basilisk-bin
+  tags:
+    - aura
+
+- name: Install surfraw
+  pacman:
+    name: surfraw
+    state: present
+  tags:
+    - surfraw
+
+- name: Configure surfraw browser
+  lineinfile:
+    dest: /etc/xdg/surfraw/conf
+    regexp: '^def   SURFRAW_graphical_browser	'
+    line: 'def   SURFRAW_graphical_browser	/usr/local/bin/browser'
+  tags:
+    - surfraw
+    - chooser
+
+- name: Push surfraw-rofi script
+  copy:
+    src: surfraw-rofi
+    dest: /usr/local/bin/surfraw-rofi
+    mode: 0755
+  tags:
+    - surfraw
+    - rofi

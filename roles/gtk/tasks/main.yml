@@ -1,0 +1,6 @@
+---
+- name: Install Engines
+  pacman:
+    name:
+      - gtk-engines
+- include: vice.yml

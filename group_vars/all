@@ -1,0 +1,193 @@
+user:
+    name: tlh
+    uid: 1000
+    group: tlh
+    shell: /usr/bin/zsh
+    email: thighbaugh@zoho.com
+    log:
+        dir: log
+        rotate: 8
+
+
+dotfiles:
+    url: https://github.com/Thomashighbaugh/dotfiles.git
+
+vice:
+    url: https://github.com/Thomashighbaugh/Vice-Theme
+
+ssh:
+    port: 22
+    user_key: /5/BackUps/.ssh/id_rsa
+    enable_sshd: True
+
+gnupg:
+    enable_agent: True
+    emulate_ssh: True
+
+network:
+    spoof_mac: True
+    conn_check:
+        interval: 0
+
+editors:
+    - vim
+    - emacs
+    - nano
+    - gedit
+    - gedit-plugins
+    - gummi
+    - texstudio
+    - zim
+    - texlive-most
+    - lyx
+    - gnome-latex
+    - gummi
+    - texmaker
+
+packages:
+    base_packages:
+        - base-devel
+        - pacman-contrib
+        - fwupd
+        - dmidecode
+        - xorg-xfd
+        - neofetch
+        - wget
+        - mkinitcpio
+        - coreutils
+        - moreutils
+        - dateutils
+        - bc
+        - ruby
+        - xdotool
+        - screen
+
+    packaging_tools:
+          - packagekit
+          - pkgconfig
+          - snapd
+          - yajl
+          - rmlint
+          - lostfiles
+          - cmake
+          - meson
+          - autoconf
+          - automake
+          - xarchiver
+
+
+    python_libraries:
+          - python-keyring
+          - python-secretstorage
+          - python-pipenv
+
+    system_monitoring:
+          - strace
+          - lsof
+          - sysstat
+          - pv
+          - jq
+          - libpeas
+          - xorg-server
+          - glances
+
+    aura_packages:
+          - ctmg
+          - wpgtk-git
+          - xsettingsd-git
+          - dotbro
+
+    manjaro_packages:
+          - manjaro-tools-base
+          - manjaro-tools-pkg
+          - manjaro-tools-iso
+          - manjaro-tools-iso
+
+    filesystem_packages:
+        - dosfstools
+        - ntfs-3g
+        - exfat-utils
+        - fatresize
+        - udftools
+        - arj
+        - binutils
+        - bzip2
+        - cpio
+        - gzip
+        - lha
+        - lrzip
+        - lz4
+        - lzip
+        - lzop
+        - p7zip
+        - tar
+        - unarj
+        - unrar
+        - unzip
+        - xz
+        - pcmanfm
+        - zip
+        - zstd
+        - flatpak
+
+    codecs:
+        - flac
+        - lame
+        - gst-libav
+        - gst-plugins-good
+        - exiv2
+        - perl-image-exiftool
+        - opus-tools
+
+
+
+browser_choices:
+    - firefox-developer-edition
+    - firefox -P default
+    - firefox -P work
+    - chromium
+
+
+passwordless_sudo:
+    - /usr/bin/openvpn*
+
+
+bootloader: grub
+
+fingerprint: False
+
+
+localtime:
+    run_on: trusted
+
+unbound:
+    tls: True
+    nameservers:
+        - 1.1.1.1@853  # Cloudflare
+        - 9.9.9.9@853  # Quad9
+
+bluetooth:
+    disable: False
+
+journal:
+    max_size: 500M
+
+udisks:
+    auto_mount: False
+    shared_mount: True
+
+hostsctl:
+    url: https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts
+
+
+
+libinput:
+    middle_click_scroll: 12
+    button_mapping: "1 2 3 4 5 6 7 8 9 10 11 2"
+
+display_manager: lightdm
+
+units:
+    run_on: trusted
+
+kernel_parameters: "quiet consoleblank=60 i915.enable_psr=2"

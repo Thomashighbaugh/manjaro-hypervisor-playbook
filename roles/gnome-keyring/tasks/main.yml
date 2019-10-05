@@ -1,0 +1,15 @@
+---
+- name: Install Gnome Keyring
+  pacman: name=gnome-keyring state=present
+
+- name: Add Auth Line to pam.d
+  lineinfile: dest=/etc/pam.d/login
+              regexp=^SystemGroup
+              state=present
+              line="auth       optional     pam_gnome_keyring.so"
+- name: Add Session Line to pam.d
+  lineinfile: dest=/etc/pam.d/login
+              regexp=^SystemGroup
+              state=present
+              line="session    optional     pam_gnome_keyring.so auto_start"
+

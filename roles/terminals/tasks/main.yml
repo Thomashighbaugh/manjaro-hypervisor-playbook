@@ -1,0 +1,42 @@
+---
+- name: Install Termite
+  pacman:
+   name: termite
+   state: present
+
+- name: Install XTerm
+  pacman:
+    name: termite
+    state: present
+
+- name: Install TMux
+  pacman:
+    name: tmux
+    state: present
+
+- name: Install Alacritty
+  pacman:
+    name: alacritty
+    state: present
+
+- name: Install Kitty
+  pacman:
+    name: kitty
+    state: present
+
+- name: Install Hyper
+  pacman:
+    name: hyper
+    state: present
+
+- name: Install Termdown
+  pacman:
+    name: termdown
+    state: present
+
+
+- name: Install Screen
+  pacman:
+    name: screen
+    state: present
+

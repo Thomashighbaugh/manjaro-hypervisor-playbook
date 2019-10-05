@@ -1,0 +1,3 @@
+- name: Install teXworks
+  command: /usr/bin/aura -Ax --noconfirm --needed texworks
+

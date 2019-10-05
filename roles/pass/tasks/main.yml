@@ -1,0 +1,22 @@
+---
+- name: Install pass
+  pacman:
+    name: pass
+    state: present
+
+- name: Install pass-otp
+  pacman:
+    name: pass-otp
+    state: present
+
+- name: Install rofi-pass
+  pacman:
+    name: rofi-pass
+    state: present
+  tags:
+    - rofi
+
+- name: Install pwgen-passphrase
+  command: /usr/bin/aura -Ax --noconfirm --needed pwgen-passphrase
+  tags:
+    - aura

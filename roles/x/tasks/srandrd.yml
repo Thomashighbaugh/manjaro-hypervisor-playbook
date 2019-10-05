@@ -1,0 +1,6 @@
+---
+- name: Install srandrd
+  command: /usr/bin/aura -Ax --noconfirm  --needed srandrd
+  tags:
+    - aura
+    - packages

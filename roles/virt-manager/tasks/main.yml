@@ -1,0 +1,13 @@
+---
+- name: Install Virtual Machine Manager
+  pacman:
+    name:
+      - virt-manager
+      - libvirt
+      - gnome-boxes
+      - libcacard
+      - open-vm-tools
+      - vagrant
+      - virglrenderer
+      - virt-install
+      -

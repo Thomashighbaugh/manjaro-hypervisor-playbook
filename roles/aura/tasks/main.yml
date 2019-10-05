@@ -1,0 +1,32 @@
+---
+- name: Install Yay
+  pacman:
+    name: yay
+    state: present
+  tags:
+    - aura
+    - packages
+
+- name: Install Go
+  pacman:
+    name: go
+    state: present
+  tags:
+      - aura
+      - packages
+
+- name: Install Aura
+  command: /usr/bin/yay -S --noconfirm aura-bin
+  become: yes
+  become_user: "{{ user.name }}"
+  tags:
+    - aura
+    - packages
+
+- name: Install AUR packages
+  command: /usr/bin/aura -Ax --noconfirm --needed {{item}}
+  with_items: "{{ packages.aura_packages }}"
+  tags:
+    - aura
+    - packages
+

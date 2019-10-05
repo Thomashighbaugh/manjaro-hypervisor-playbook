@@ -1,0 +1,3 @@
+---
+- name: Install LightTable Code Editor
+  command: /usr/bin/aura -Ax --needed --noconfirm lighttable-git

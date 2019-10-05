@@ -1,0 +1,5 @@
+- name: Install Alacarte
+  pacman: name=alacarte state=present
+  tags:
+    - packages
+    - menus

@@ -1,0 +1,30 @@
+---
+- name: Install Docker
+  pacman:
+    name:
+      - docker
+      - docker-machine
+      - docker-compose
+      - lxc
+      - python-docker
+    state: present
+  tags:
+      - docker
+
+- name: Start Docker service
+  service:
+    name: docker.service
+    state: started
+
+- name: Enable Docker Service in Systemd
+  systemd:
+    name: docker
+    state: started
+    enabled: yes
+
+- name: Add User to Docker Group
+  user:
+    name: "{{ user.name }}"
+    groups: docker
+    append: yes
+
