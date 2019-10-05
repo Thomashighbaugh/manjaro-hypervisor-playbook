@@ -1,3 +1,0 @@
----
-- name: Install WikidPad
-  command: /usr/bin/aura -Ax --noconfirm --needed wikidpad

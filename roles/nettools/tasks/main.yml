@@ -50,3 +50,12 @@
 
 - name: Install speedtest-cli
   pacman: name=speedtest-cli state=present
+
+- name: Install NFS
+   pacman:
+     name: nfs-utils
+     state: present
+- name: Install Samba
+  pacman:
+    name: samba
+    state: present

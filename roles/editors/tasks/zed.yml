@@ -1,3 +1,0 @@
----
-- name: Install Zed
-  command: /usr/bin/aura -Ax --noconfirm --needed zed-git

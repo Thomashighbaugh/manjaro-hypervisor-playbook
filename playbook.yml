@@ -16,13 +16,10 @@
     - { role: pass, tags: ['pass'] }
     - { role: nettools, tags: ['nettools'] }
     - { role: networkmanager, tags: ['networkmanager'] }
-    - { role: unbound, tags: ['unbound'] }
-    - { role: editors, tags: ['editors'] }
     - { role: filesystems, tags: ['filesystems'] }
     - { role: archive, tags: ['archive'] }
     - { role: udisks, tags: ['udisks'] }
     - { role: browsers, tags: ['browsers'] }
-    - { role: cups, tags: ['cups'] }
     - { role: pdf, tags: ['pdf'] }
     - { role: virtualbox, tags: ['virtualbox'] }
     - { role: hashicorp, tags: ['hashicorp'] }
@@ -42,6 +39,9 @@
     - { role: gtk, tags: [' '] }
     - { role: golang, tags: [' '] }
     - { role: vmware, tags: [' '] }
+    - { role: spice, tags: [' '] }
+    - { role: kvm, tags: [' '] }
+    - { role: xen, tags: [' '] }
 
   vars_prompt:
     - name: user_password

@@ -1,6 +1,0 @@
----
-- name: Install MenuLibre
-  command: /usr/bin/aura -Ax --noconfirm --needed menulibre
-  tags:
-    - menus
-    - aura

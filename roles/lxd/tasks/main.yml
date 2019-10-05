@@ -1,0 +1,19 @@
+---
+- name: Install LXC
+    pacman:
+      name: lxc
+      state: present
+- name: Install LXD
+    command: /usr/bin/aura -Ax lxd
+- name: Start LXD
+    service:
+      name: lxd.service
+      state: started
+- name: Add User to LXD Group
+  user:
+    name: "{{ user.name }}"
+    groups: lxd
+    append: yes
+
+
+

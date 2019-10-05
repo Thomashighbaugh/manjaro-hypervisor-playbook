@@ -1,6 +1,0 @@
----
-- name: Install Jetbrains Toolbox
-  command: /usr/bin/aura -Ax --noconfirm --needed jetbrains-toolbox
-  tags:
-    - aura
-    - jetbrains

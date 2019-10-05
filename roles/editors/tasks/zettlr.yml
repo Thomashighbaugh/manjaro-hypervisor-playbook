@@ -1,3 +1,0 @@
----
-- name: Install Zettlr
-  command: /usr/bin/aura -Ax --noconfirm --needed zettlr

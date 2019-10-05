@@ -1,0 +1,33 @@
+---
+- name: Install Qemu
+  pacman:
+    name: qemu
+    state: present
+- name: Install Lib Virt
+  pacman:
+    name: libvirt
+    state: present
+- name: Install Libvirt Python
+  pacman:
+    name: libvirt-python
+    state: present
+- name: Install Libvirt-glib
+  pacman:
+    name: libvirt-glib
+    state: present
+- name: Install Sys Virt
+  pacman:
+    name: perl-sys-virt
+    state: present
+- name: Installl Libguestfs
+  command: /usr/bin/aura -Ax libguestfs
+
+- name: Installl Python-Libguestfs
+  command: /usr/bin/aura -Ax python-libguestfs
+
+- name: Start Libvirt
+  service:
+    name: libvirtd.service
+    state: started
+
+

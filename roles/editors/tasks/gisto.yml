@@ -1,5 +1,0 @@
----
-- name: Install Gisto
-  command: /usr/bin/aura -Ax --noconfirm --needed gisto
-  tags:
-    - aura

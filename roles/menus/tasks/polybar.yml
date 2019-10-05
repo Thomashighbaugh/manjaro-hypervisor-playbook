@@ -1,6 +1,0 @@
----
-- name: Install Polybar
-  command: /usr/bin/aura -Ax --noconfirm --needed polybar-git
-  tags:
-    - menus
-    - aura
