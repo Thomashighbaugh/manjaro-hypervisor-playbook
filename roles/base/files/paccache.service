@@ -1,4 +1,4 @@
-[Unit]
+Unit]
 Description=Clean-up Old Pacman Files
 
 [Service]

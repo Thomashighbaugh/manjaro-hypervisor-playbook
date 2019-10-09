@@ -41,14 +41,14 @@
     - libinput
 
 - name: Install Xorg Xauth
-   pacman:
-     name: xorg-xauth
-     state: present
+  pacman:
+   name: xorg-xauth
+   state: present
 
 - name: Install Xorg Xhost
-   pacman:
-     name: xorg-xhost
-     state: present
+  pacman:
+   name: xorg-xhost
+   state: present
 
 - include: sxhkd.yml
 - include: unclutter.yml

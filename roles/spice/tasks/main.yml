@@ -1,20 +1,20 @@
 ---
 - name: Install Virt-Viewer
-   pacman:
+  pacman:
     name: virt-viewer
     state: present
 - name: Install Spice GTK
-   pacman:
+  pacman:
     name: spice-gtk
     state: present
 
 - name: Install Spice VDAgent
-   pacman:
+  pacman:
     name: spice-vdagent
     state: present
 
 - name: Install XF86 Video QXL
-   pacman:
+  pacman:
     name: xf86-video-qxl
     state: present
 

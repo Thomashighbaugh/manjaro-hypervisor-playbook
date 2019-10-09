@@ -11,7 +11,7 @@
   tags:
       - docker
 - name: Install Nvidia Container Toolkit
-   command: /usr/bin/aura -Ax nvidia-container-toolkit
+  command: /usr/bin/aura -Ax nvidia-container-toolkit
 
 - name: Start Docker service
   service:

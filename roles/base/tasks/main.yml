@@ -11,8 +11,6 @@
               state=present
               line='GRUB_CMDLINE_LINUX_DEFAULT=\"{{ kernel_parameters }}\"'"
   when: kernel_parameters is defined and bootloader == 'grub'
-  notify:
-    - rebuild grub
   tags:
     - kernelparams
 

@@ -1,19 +1,19 @@
 ---
 - name: Install multilib-devel
-   pacman:
+  pacman:
     name: multilib-devel
     state: present
 
 - name: Install OVMF
-   pacman:
+  pacman:
     name: ovmf
     state: present
 
 - name: Install libvirt-xen
-   command: /usr/bin/aura -Ax libvirt-xen
+  command: /usr/bin/aura -Ax libvirt-xen
 
 - name: Install Xen
-   command: /usr/bin/aura -Ax xen
+  command: /usr/bin/aura -Ax xen
 
 - name: Install Xen Docs
-   command: /usr/bin/aura -Ax xen-docs
+  command: /usr/bin/aura -Ax xen-docs
