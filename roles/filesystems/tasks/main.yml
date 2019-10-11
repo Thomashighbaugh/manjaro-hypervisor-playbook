@@ -11,9 +11,6 @@
       - ranger
     state: present
 
-- name: Install Sunflower FM
-  command: sudo aura -Ax --needed --noconfirm sunflower
-
 - name: Install Disk Utilities
   pacman:
     name:

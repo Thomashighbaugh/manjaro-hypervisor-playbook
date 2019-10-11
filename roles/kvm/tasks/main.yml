@@ -15,12 +15,16 @@
   pacman:
     name: libvirt-glib
     state: present
-- name: Install Sys Virt
+- name: Install Sys-Virt
   pacman:
     name: perl-sys-virt
     state: present
+
 - name: Installl Libguestfs
-  command: /usr/bin/aura -Ax libguestfs
+  command: /usr/bin/aura -Ax  --noconfirm --needed libguestfs
+
+- name: Installl VMWare Workstation
+  command: /usr/bin/aura -Ax  --noconfirm --needed vmware-workstation
 
 - name: Installl Python-Libguestfs
   command: /usr/bin/aura -Ax python-libguestfs

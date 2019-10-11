@@ -3,8 +3,6 @@
   command: /usr/bin/aura -Ax --noconfirm --needed  libldac
   tags:
     - aura
-  notify:
-    - restart pulse as user
 
 - name: Install bluetooth libraries and tools
   pacman:
@@ -14,8 +12,6 @@
       - bluez-utils
       - blueman
     state: present
-  notify:
-    - restart pulse as user
 
 - name: Auto-switch between HSP/HSF and A2DP
   lineinfile:
@@ -24,11 +20,6 @@
       state: present
       line: "load-module module-bluetooth-policy auto_switch=2"
 
-
-- name: Do not auto power on the bluetooth device
-  command: gsettings set org.blueman.plugins.powermanager auto-power-on false
-  become: yes
-  become_user: "{{ user.name }}"
 
 - name: Unblock the bluetooth service
   service: name="rfkill-block@bluetooth.service" enabled=no state=stopped

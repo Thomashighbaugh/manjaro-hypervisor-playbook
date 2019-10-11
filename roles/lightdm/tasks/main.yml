@@ -15,17 +15,11 @@
 - name: Push LightDM greeter background
   copy: src=vice.png dest=/usr/share/backgrounds/vice.png
 
-- name: Specify LightDM greeter background
-  lineinfile: dest=/etc/lightdm/lightdm-gtk-greeter.conf
-             regexp="^background="
-             state=present
-             line="background=/usr/share/backgrounds/vice.png"
-
-- name: Hide user images
-  lineinfile: dest=/etc/lightdm/lightdm-gtk-greeter.conf
-              regexp="^hide-user-image="
-              state=present
-              line="hide-user-image=true"
+#- name: Specify LightDM greeter background
+#  lineinfile: dest=/etc/lightdm/lightdm-gtk-greeter.conf
+#             regexp="^background="
+#             state=present
+#             line="background=/usr/share/backgrounds/vice.png"
 
   #- name: Force LightDM greeter theme
   # lineinfile: dest=/usr/share/xgreeters/lightdm-gtk-greeter.desktop

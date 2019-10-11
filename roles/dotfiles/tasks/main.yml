@@ -1,8 +1,0 @@
----
-- name: Install Stow
-  pacman: name=stow state=present
-
-- name: Install User Dotfiles
-  script: dotfiles.sh
-  become: yes
-  become_user: "{{ user.name }}"

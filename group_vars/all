@@ -93,9 +93,7 @@ packages:
 
     aura_packages:
           - ctmg
-          - wpgtk-git
           - xsettingsd-git
-          - dotbro
 
     manjaro_packages:
           - manjaro-tools-base
@@ -138,6 +136,8 @@ packages:
         - exiv2
         - perl-image-exiftool
         - opus-tools
+        - youtube-dl
+
 
 
 

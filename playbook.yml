@@ -10,7 +10,6 @@
     - { role: gnupg, tags: ['gnupg'] }
     - { role: microcode, tags: ['microcode'], when: "'GenuineIntel' in ansible_processor" }
     - { role: ssh, tags: ['ssh'] }
-    - { role: dotfiles, tags: ['dotfiles'] }
     - { role: ssd, tags: ['ssd'] }
     - { role: lightdm, tags: ['lightdm'], when: "display_manager == 'lightdm'" }
     - { role: pass, tags: ['pass'] }
@@ -36,9 +35,7 @@
     - { role: menus, tags: ['menus'] }
     - { role: nvm, tags: ['nvm'] }
     - { role: bitwarden, tags: [' '] }
-    - { role: gtk, tags: [' '] }
     - { role: golang, tags: [' '] }
-    - { role: vmware, tags: [' '] }
     - { role: spice, tags: [' '] }
     - { role: kvm, tags: [' '] }
     - { role: xen, tags: [' '] }
